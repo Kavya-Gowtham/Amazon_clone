@@ -16,7 +16,7 @@ function Header() {
     }
     return (
         <div className='header'>
-            <Link to="/">
+            <Link className="link_component" to="/">
                 <img className='header_logo' src="https://pngimg.com/uploads/amazon/amazon_PNG25.png" alt= ""/>
             </Link>
             <div className="header_search">
@@ -24,9 +24,9 @@ function Header() {
                 <SearchIcon className="header_searchIcon" />
             </div>
             <div className="header_nav">
-                <Link to = {!user && '/login'}> 
+                <Link className="link_component" to = {!user && '/login'}> 
                 <div onClick= {handleAuthentication } className="header_option">
-                    <span className="header_option1">Hello Guest</span>
+                    <span className="header_option1">Hello {user?.email} </span>
                     <span className="header_option2">{user ? 'Sign Out' : 'Sign In' }</span>
                 </div>
                 </Link>
@@ -38,7 +38,7 @@ function Header() {
                     <span className="header_option1">Your</span>
                     <span className="header_option2">Prime</span>
                 </div>
-                <Link to="/checkout">
+                <Link className="link_component"  to="/checkout">
                     <div className="header_optionBasket">
                         <ShoppingBasketIcon />
                         <span className="header_option2 header_basketCount">{ basket?.length }</span>
